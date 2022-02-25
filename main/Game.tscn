@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://tileset/hex_tileset_41.tres" type="TileSet" id=1]
+[ext_resource path="res://main/pathfind_astar.gd" type="Script" id=2]
+[ext_resource path="res://main/drones.gd" type="Script" id=3]
+
+[node name="Game" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -2
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 30, 36 )
+cell_half_offset = 1
+centered_textures = true
+format = 1
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 512, 300 )
+current = true
+
+[node name="Drones" type="Node" parent="."]
+script = ExtResource( 3 )
