@@ -15,13 +15,13 @@ var direction_differences = [
      [-1,  0], [-1, -1], [ 0, -1]],
     [[+1,  0], [+1, +1], [ 0, +1],
      [-1, +1], [-1,  0], [ 0, -1]]
-    
 ]
 
 onready var astar_node = AStar.new()
 onready var obstacles = get_used_cells_by_id(0)
 onready var hex_shift = Vector2(cell_size.x / 2, (cell_size.y /2+ cell_size.x / sqrt(3))/ 2)
-var draw_line = []
+var reserved_tiles = {}
+
 
 func _ready():
 	for y in range(map_size.y):
